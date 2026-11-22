@@ -110,7 +110,7 @@
 ### Сайт и загрузки
 
 - **Сайт:** исходники находятся в [web/](web/). Для публикации включите GitHub Pages через **Settings → Pages → GitHub Actions**.
-- **Загрузки:** [GitHub Releases](https://github.com/German-GPD/pdf-workspace/releases) — появятся после публикации проверенной сборки.
+- **Скачать Windows-установщик (.exe):** [PDF-Workspace-setup.exe](https://github.com/German-GPD/pdf-workspace/releases/latest/download/PDF-Workspace-setup.exe) — ссылка активируется после первого подписанного релиза.\n- **Все версии:** [GitHub Releases](https://github.com/German-GPD/pdf-workspace/releases).
 - **Обратная связь:** [GitHub Issues](https://github.com/German-GPD/pdf-workspace/issues).
 - **Сотрудничество:** [Telegram · @german_me](https://t.me/german_me).
 
