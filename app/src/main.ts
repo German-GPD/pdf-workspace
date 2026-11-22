@@ -141,7 +141,7 @@ async function renderPage() {
   canvas.style.width = viewport.width + "px";
   canvas.style.height = viewport.height + "px";
   const transform: [number, number, number, number, number, number] = [ratio, 0, 0, ratio, 0, 0];
-  currentRender = page.render({ canvasContext: ctx, viewport, transform });
+  currentRender = page.render({ canvas, canvasContext: ctx, viewport, transform });
   try { await currentRender.promise; } catch (error) {
     if (!(error instanceof Error) || error.name !== "RenderingCancelledException") throw error;
   }
