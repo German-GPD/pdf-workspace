@@ -15,7 +15,7 @@
 
 <p align="center">
   <a href="#русский">Русский</a> · <a href="#english">English</a> · <a href="#español">Español</a> ·
-  <a href="web/">Website</a> · <a href="https://github.com/German-GPD/pdf-workspace/issues">Issues</a>
+  <a href="https://github.com/German-GPD/pdf-workspace/releases/latest/download/PDF-Workspace-setup.exe">Download Windows installer (.exe)</a> · <a href="web/">Website</a> · <a href="https://github.com/German-GPD/pdf-workspace/issues">Issues</a>
 </p>
 
 <p align="center">
@@ -27,7 +27,7 @@
 </p>
 
 > [!IMPORTANT]
-> **PDF Workspace находится на стадии проектирования.** Описанные ниже возможности — цели разработки, а не уже реализованные функции. Публичной сборки приложения пока нет.
+> **PDF Workspace — ранняя рабочая версия (MVP) в активной разработке.** Уже реализуется настольное приложение для Windows: открытие и просмотр PDF, история, локальная библиотека и обновление из самой программы. Аннотации, экспорт и расширенная организация документов ещё в работе.
 
 ---
 
@@ -152,7 +152,7 @@ The stack is preliminary. Dependency compatibility, licensing, and the PDF annot
 
 ### Project status
 
-**Planning stage — no public application build is available yet.** Listed features describe the intended product, not completed functionality.
+**Early working MVP in active development.** The Windows app is being implemented; the first signed installer will be published through GitHub Releases. Some planned features are not implemented yet.
 
 - [Website source](web/)
 - [GitHub Releases](https://github.com/German-GPD/pdf-workspace/releases)
@@ -189,7 +189,7 @@ La arquitectura es preliminar. La compatibilidad, las licencias de dependencias 
 
 ### Estado del proyecto
 
-**Fase de planificación: todavía no existe una versión pública de la aplicación.** Las funciones descritas son objetivos del proyecto.
+**MVP funcional inicial en desarrollo activo.** Se está implementando la aplicación para Windows; el primer instalador firmado se publicará en GitHub Releases. Algunas funciones previstas aún no están implementadas.
 
 - [Código del sitio](web/)
 - [Versiones](https://github.com/German-GPD/pdf-workspace/releases)
