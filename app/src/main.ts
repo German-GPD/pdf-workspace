@@ -1,4 +1,5 @@
 import * as pdfjs from "pdfjs-dist";
+import workerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 import type { PDFDocumentProxy, RenderTask } from "pdfjs-dist";
 import { isTauri } from "@tauri-apps/api/core";
 import { appLocalDataDir, join } from "@tauri-apps/api/path";
@@ -7,7 +8,7 @@ import { copyFile, mkdir, readFile } from "@tauri-apps/plugin-fs";
 import { check } from "@tauri-apps/plugin-updater";
 import "./style.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.mjs", import.meta.url).toString();
+pdfjs.GlobalWorkerOptions.workerSrc = workerUrl;
 
 type RecentDocument = { name: string; path: string; openedAt: number };
 type LibraryDocument = { name: string; path: string; addedAt: number };
