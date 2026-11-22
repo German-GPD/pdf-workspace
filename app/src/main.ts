@@ -3,10 +3,12 @@ import workerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 import type { PDFDocumentProxy, RenderTask } from "pdfjs-dist";
 import { PDFDocument, rgb } from "pdf-lib";
 import { isTauri } from "@tauri-apps/api/core";
+import { getVersion } from "@tauri-apps/api/app";
 import { appLocalDataDir, join } from "@tauri-apps/api/path";
 import { open, save } from "@tauri-apps/plugin-dialog";
 import { copyFile, mkdir, readFile, writeFile } from "@tauri-apps/plugin-fs";
 import { check } from "@tauri-apps/plugin-updater";
+import { relaunch } from "@tauri-apps/plugin-process";
 import "./style.css";
 
 pdfjs.GlobalWorkerOptions.workerSrc = workerUrl;
@@ -381,14 +383,19 @@ async function exportAnnotatedPdf() {
   }
 }
 async function checkForUpdates(silent = false) {
-  if (!isTauri()) { showToast("Проверка обновлений доступна в установленной версии."); return; }
-  updateStatus.textContent = "Проверяем…";
+  if (!isTauri()) {
+    updateStatus.textContent = "Доступно в приложении";
+    if (!silent) showToast("Проверка обновлений доступна в установленной версии.");
+    return;
+  }
+  updateStatus.textContent = "Проверяем обновления…";
   try {
     const update = await check();
     pendingUpdate = update;
     if (!update) {
+      updateBanner.hidden = true;
       updateStatus.textContent = "Установлена последняя версия";
-      showToast("Обновлений нет — у вас последняя версия.");
+      if (!silent) showToast("Обновлений нет — у вас последняя версия.");
       return;
     }
     $("update-title").textContent = "Доступна версия " + update.version;
@@ -396,6 +403,7 @@ async function checkForUpdates(silent = false) {
     updateBanner.hidden = false;
     updateStatus.textContent = "Доступна версия " + update.version;
   } catch (error) {
+    pendingUpdate = null;
     updateStatus.textContent = "Не удалось проверить обновления";
     if (!silent) showToast(error instanceof Error ? error.message : "Ошибка проверки обновлений.");
   }
@@ -405,15 +413,30 @@ async function installUpdate() {
   const button = $("install-update") as HTMLButtonElement;
   button.disabled = true;
   button.textContent = "Загрузка…";
+  let downloadedBytes = 0;
+  let totalBytes = 0;
   try {
     await pendingUpdate.downloadAndInstall((event) => {
-      if (event.event === "Progress") button.textContent = "Загрузка…";
-      if (event.event === "Finished") button.textContent = "Установка…";
+      if (event.event === "Started") {
+        totalBytes = event.data.contentLength ?? 0;
+        updateStatus.textContent = "Загрузка обновления…";
+        button.textContent = totalBytes ? "Загрузка… 0%" : "Загрузка…";
+      } else if (event.event === "Progress") {
+        downloadedBytes += event.data.chunkLength;
+        const percent = totalBytes ? Math.min(100, Math.round(downloadedBytes / totalBytes * 100)) : 0;
+        button.textContent = totalBytes ? "Загрузка… " + percent + "%" : "Загрузка…";
+      } else if (event.event === "Finished") {
+        button.textContent = "Установка…";
+        updateStatus.textContent = "Проверка завершена. Устанавливаем обновление…";
+      }
     });
-    updateStatus.textContent = "Обновление загружено. Приложение перезапустится для установки.";
+    button.textContent = "Перезапуск…";
+    updateStatus.textContent = "Обновление установлено. Перезапускаем приложение…";
+    await relaunch();
   } catch (error) {
     button.disabled = false;
     button.textContent = "Повторить";
+    updateStatus.textContent = "Не удалось установить обновление";
     showToast(error instanceof Error ? error.message : "Не удалось установить обновление.");
   }
 }
@@ -469,8 +492,10 @@ themeButton.addEventListener("click", () => {
   applyTheme();
 });
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyTheme);
-$("app-version").textContent = "v0.2.0";
 renderLists();
 applyTheme();
 setTool("select");
-if (isTauri()) window.setTimeout(() => void checkForUpdates(true), 2500);
+if (isTauri()) {
+  void getVersion().then((version) => { $("app-version").textContent = "v" + version; });
+  window.setTimeout(() => void checkForUpdates(true), 2500);
+}
