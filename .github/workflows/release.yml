@@ -46,4 +46,4 @@ jobs:
           args: --bundles nsis --config src-tauri/tauri.release.conf.json
           uploadUpdaterJson: true
           updaterJsonPreferNsis: true
-          releaseAssetNamePattern: "PDF-Workspace[setup].[ext]"
+          releaseAssetNamePattern: "PDF-Workspace-setup.[ext]"
