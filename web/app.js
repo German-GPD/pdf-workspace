@@ -16,7 +16,9 @@ const languageMenu=document.querySelector("#language-menu");
 const languageFlag=document.querySelector("#language-flag");
 const languageCode=document.querySelector("#language-code");
 function applyLanguage(language){
-  const dictionary=translations[language]||translations.ru;
+  currentLanguage=translations[language]?language:"ru";
+  language=currentLanguage;
+  const dictionary=translations[language];
   document.documentElement.lang=language;
   document.querySelectorAll("[data-i18n]").forEach(element=>{
     const value=dictionary[element.dataset.i18n];
@@ -40,6 +42,7 @@ languageButton.addEventListener("click",()=>{
 });
 languageMenu.querySelectorAll("[data-language]").forEach(button=>button.addEventListener("click",()=>{
   applyLanguage(button.dataset.language);
+  applyTheme();
   languageButton.setAttribute("aria-expanded","false");
   languageMenu.hidden=true;
 }));
