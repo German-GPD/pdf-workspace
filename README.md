@@ -5,6 +5,8 @@
 <h1 align="center">PDF Workspace</h1>
 <p align="center"><strong>Ваши документы. Ваше пространство.</strong></p>
 
+<p align="center"><a href="https://github.com/German-GPD/pdf-workspace/releases/latest/download/PDF-Workspace-setup.exe"><img src="https://img.shields.io/badge/Download-Windows%20Installer-254d35?style=for-the-badge&logo=windows&logoColor=white" alt="Download PDF Workspace for Windows"></a></p>
+
 <p align="center">
   <img src="https://img.shields.io/badge/Windows-desktop-254d35?style=flat-square" alt="Windows">
   <img src="https://img.shields.io/badge/Free_to_use-yes-527858?style=flat-square" alt="Free to use">
