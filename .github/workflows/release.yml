@@ -43,7 +43,7 @@ jobs:
           releaseBody: "Windows installer and signed in-app update package for PDF Workspace."
           releaseDraft: false
           prerelease: false
-          args: --bundles nsis
+          args: --bundles nsis --config src-tauri/tauri.release.conf.json
           uploadUpdaterJson: true
           updaterJsonPreferNsis: true
           releaseAssetNamePattern: "PDF-Workspace[setup].[ext]"
