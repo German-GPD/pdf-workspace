@@ -1,127 +1,243 @@
-# PDF Workspace
+<!--
+  PDF Workspace — project README
+  The cover is an illustrative concept, not a screenshot of a released application.
+-->
 
 <p align="center">
-  <strong>A focused, customizable workspace for PDF documents.</strong><br>
-  Windows desktop application · Free · Offline-first
+  <img src="assets/readme-cover.svg" alt="PDF Workspace — concept preview" width="100%">
+</p>
+
+<h1 align="center">PDF Workspace</h1>
+
+<p align="center">
+  <strong>Рабочее пространство для PDF. Ничего лишнего — всё необходимое.</strong>
+</p>
+
+<p align="center">
+  <a href="https://github.com/German-GPD/pdf-workspace"><img src="https://img.shields.io/badge/platform-Windows-586b5c?style=flat-square" alt="Windows"></a>
+  <a href="https://github.com/German-GPD/pdf-workspace/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-PW--FUL-586b5c?style=flat-square" alt="PW-FUL License"></a>
+  <img src="https://img.shields.io/badge/price-free-586b5c?style=flat-square" alt="Free">
+  <img src="https://img.shields.io/badge/status-planning-b08b45?style=flat-square" alt="Planning">
+  <img src="https://img.shields.io/badge/interface-RU%20%7C%20EN%20%7C%20ES-586b5c?style=flat-square" alt="Planned interface languages">
 </p>
 
 <p align="center">
   <a href="#русский">Русский</a> ·
   <a href="#english">English</a> ·
-  <a href="#español">Español</a>
+  <a href="#español">Español</a> ·
+  <a href="https://github.com/German-GPD/pdf-workspace/issues">Issues</a> ·
+  <a href="https://t.me/german_me">Связаться</a>
 </p>
 
-> **Project status:** Planning and architecture. No functional application release is available yet.
+> [!IMPORTANT]
+> **PDF Workspace находится на стадии проектирования.** Это описание целевого продукта и планируемых возможностей, а не список уже реализованных функций. Готовой сборки и скриншотов приложения пока нет.
 
 ---
 
 ## Русский
 
-**PDF Workspace** — бесплатное Windows-приложение для чтения, организации и аннотирования PDF-документов. Проект ориентирован на учителей, учащихся и всех, кому нужно удобное рабочее пространство для PDF.
+### О проекте
 
-### Основная идея
-- Максимум места для документа, минимум интерфейсного шума.
-- Настраиваемая адаптивная **Monic Control Bar**: кнопки можно добавлять, скрывать, переставлять и группировать.
-- Светлая и тёмная темы; системный акцентный цвет Windows.
-- Библиотека документов, недавние файлы, избранное, закладки и заметки.
-- Рисование, выделение, текстовые пометки и другие overlay-аннотации.
-- Автосохранение рабочего состояния и экспорт аннотированной копии PDF.
-- Работа без обязательного аккаунта и подключения к серверу.
-- Встроенная проверка и установка обновлений.
+**PDF Workspace** — бесплатное настольное приложение для Windows, задуманное как единое пространство для чтения, организации и разметки PDF-документов.
 
-### Технологическое направление
-Tauri 2 · Rust · WebView2 · TypeScript · PDF.js · SQLite.
+В первую очередь проект ориентирован на учителей и учащихся: учебники, методические материалы, задания, конспекты и рабочие документы должны быть доступны в одном удобном месте.
 
-Точный состав библиотек и их лицензии будут проверены до реализации и публикации сборок.
+Главный принцип — **документ занимает центральное место**. Интерфейс остаётся компактным, инструменты подстраиваются под пользователя, а рабочее состояние документа сохраняется между запусками.
 
-### Структура проекта
-- **[app/](app/)** — Windows-приложение.
-- **[website/](website/)** — отдельный сайт GitHub Pages.
-- **[docs/](docs/)** — архитектура, решения и дорожная карта.
+### Что планируется
 
-### Сайт и загрузки
-Сайт: *будет опубликован после подготовки первой версии.*  
-Загрузки: *появятся вместе с первым релизом.*
+| Раздел | Возможности |
+|---|---|
+| **PDF Viewer** | Просмотр страниц, поиск по тексту, масштабирование, поворот, режим двух страниц |
+| **Library** | Библиотека PDF, папки и коллекции, поиск, сортировка, избранное |
+| **Recent files** | История открытых документов и быстрое продолжение чтения |
+| **Annotations** | Ручка, маркер, выделение, ластик, фигуры, стрелки и текстовые заметки |
+| **Bookmarks** | Закладки страниц с пользовательскими названиями |
+| **Notes** | Заметки к документу, отдельной странице или собственной теме |
+| **Export** | Экспорт размеченного документа в отдельную PDF-копию |
+| **Workspace** | Запоминание страницы, масштаба и позиции чтения |
+| **Appearance** | Светлая и тёмная темы, системный акцентный цвет Windows |
+| **Updates** | Проверка обновлений и установка новых версий |
 
-### Участие в проекте
-На текущем этапе проект находится на стадии проектирования. Предложения и обсуждение можно вести через GitHub Issues.
+### Monic Control Bar
+
+Фирменная адаптивная панель управления, которую планируется развивать как переиспользуемый компонент экосистемы German'$ GPD.
+
+- **Своя конфигурация:** добавление, скрытие и перестановка кнопок.
+- **Свободное отображение:** иконки, текст или иконки вместе с текстом.
+- **Группы действий:** объединение инструментов по назначению.
+- **Контекстные команды:** набор действий может меняться в зависимости от раздела.
+- **Быстрый доступ:** редко используемые команды можно убрать в дополнительное меню.
+- **Сброс:** возврат к стандартной конфигурации.
+
+### Интерфейс и рабочее пространство
+
+- Windows Native — визуальная основа интерфейса.
+- Системный цвет акцента Windows.
+- Светлая и тёмная темы; выбор при первом запуске и изменение в настройках.
+- Компактные панели и тонкие разделители вместо тяжёлых карточек.
+- Минимум пустого пространства — максимум места для страницы PDF.
+- Боковые панели и миниатюры страниц открываются по необходимости.
+
+**Планируемые режимы просмотра:**
+
+1. **Обычный** — основные панели и инструменты доступны.
+2. **Компактный** — боковые панели скрыты, документу отдано больше места.
+3. **Фокус** — почти весь экран занимает PDF; интерфейс вызывается по необходимости.
+
+### Работа с файлами
+
+Предусматриваются два разных сценария:
+
+- **Открыть файл** — PDF остаётся в исходной папке; приложение запоминает его в истории.
+- **Добавить в библиотеку** — PDF копируется в управляемое хранилище приложения.
+
+Удаление записи из библиотеки не должно случайно удалять исходный файл. Аннотации хранятся отдельно от оригинала, а экспорт создаёт новую PDF-копию.
+
+Пользователь сможет выбрать расположение данных: стандартную папку документов, произвольный диск или переносимое хранилище.
+
+### Архитектура и технологии
+
+| Компонент | Назначение |
+|---|---|
+| **Tauri 2** | Desktop-оболочка и взаимодействие с Windows |
+| **Rust** | Системная логика и операции с файлами |
+| **WebView2** | Отображение интерфейса на Windows |
+| **TypeScript** | Логика пользовательского интерфейса |
+| **PDF.js** | Отображение и работа с содержимым PDF |
+| **Canvas / SVG** | Слой аннотаций поверх страниц |
+| **SQLite** | Метаданные, история, закладки и настройки |
+| **Vite / Cargo** | Инструменты разработки и сборки |
+
+Технологический стек предварительный. До реализации будут проверены совместимость компонентов, лицензии зависимостей и способ корректного экспорта аннотаций в PDF.
+
+### Принципы проекта
+
+- **Local-first** — документы и рабочие данные остаются под контролем пользователя.
+- **Без обязательного аккаунта** — облачная учётная запись не является условием использования.
+- **Оригинал в безопасности** — аннотации не должны незаметно перезаписывать исходный PDF.
+- **Настраиваемость** — пользователь сам определяет удобный набор инструментов.
+- **Компактность** — интерфейс не должен отнимать место у документа.
+- **Прозрачность** — понятные релизы, список изменений и сведения о зависимостях.
+
+### Дорожная карта
+
+- [x] Создание репозитория и фиксация направления проекта.
+- [x] Подготовка пользовательской лицензии PW-FUL.
+- [ ] Уточнение требований и архитектуры.
+- [ ] Проектирование интерфейса и Monic Control Bar.
+- [ ] Подготовка базовой структуры приложения.
+- [ ] Реализация библиотеки документов и PDF Viewer.
+- [ ] Инструменты аннотаций и сохранение рабочего состояния.
+- [ ] Экспорт аннотированных PDF.
+- [ ] Настройки, локализация и проверка доступности.
+- [ ] Тестирование, установщик и первый публичный релиз.
+- [ ] Сайт проекта и документация.
+
+Этапы могут меняться по мере разработки.
+
+### Загрузка
+
+<kbd>COMING SOON</kbd>
+
+Установщик будет опубликован здесь после появления проверенной сборки:
+
+- [GitHub Releases](https://github.com/German-GPD/pdf-workspace/releases)
+
+Пока релизов нет — не скачивайте установщики из сторонних источников, выдаваемые за PDF Workspace.
+
+### Участие и обратная связь
+
+Идеи, предложения и сообщения об ошибках можно будет оставлять в [GitHub Issues](https://github.com/German-GPD/pdf-workspace/issues).
+
+По вопросам сотрудничества, отдельным разрешениям и другим договорённостям:
+
+**[Telegram · @german_me](https://t.me/german_me)**
+
+### Лицензия
+
+Проект распространяется по **[PDF Workspace Free Use License (PW-FUL)](LICENSE)**.
+
+- Использование — бесплатно.
+- Изучение и изменение исходного кода — разрешены.
+- Распространение оригинальных и изменённых версий — бесплатно, с соблюдением лицензии и указанием автора.
+- Продажа копий и модифицированных версий — запрещена.
+- Добровольные донаты автору — разрешены.
 
 ---
 
 ## English
 
-**PDF Workspace** is a free Windows application for reading, organizing, and annotating PDF documents. It is designed for teachers, students, and anyone who needs a focused PDF workspace.
+**PDF Workspace** is a planned free Windows desktop application for reading, organizing, and annotating PDF documents. Its primary audience is teachers and students.
 
-### Core direction
-- Give the document as much room as possible.
-- A customizable, adaptive **Monic Control Bar** with reorderable, hideable, and groupable actions.
+### Planned features
+
+- PDF viewer with text search, zoom, rotation, and two-page mode.
+- Local document library, folders, collections, recent files, and favorites.
+- Annotations: pen, highlighter, eraser, shapes, arrows, and text notes.
+- Bookmarks and notes linked to documents and pages.
+- Workspace restoration: last page, zoom level, and reading position.
+- Export annotated documents as separate PDF copies.
 - Light and dark themes with the Windows system accent color.
-- Document library, recent files, favorites, bookmarks, and notes.
-- Drawing, highlighting, text notes, and other overlay annotations.
-- Automatic workspace-state saving and annotated PDF export.
-- No mandatory account or cloud connection.
-- Built-in update checking and installation.
+- Three workspace modes: Normal, Compact, and Focus.
 
-### Technology direction
-Tauri 2 · Rust · WebView2 · TypeScript · PDF.js · SQLite.
+### Monic Control Bar
 
-Dependencies and their licenses will be reviewed before implementation and release.
+A customizable adaptive toolbar: reorder, hide, group, and configure actions; choose icons, labels, or both; restore the default layout when needed.
 
-### Project layout
-- **[app/](app/)** — Windows desktop application.
-- **[website/](website/)** — standalone GitHub Pages website.
-- **[docs/](docs/)** — architecture, decisions, and roadmap.
+### Planned technology
 
-### Website and downloads
-Website: *coming after the first website build.*  
-Downloads: *will be available with the first release.*
+Tauri 2 · Rust · WebView2 · TypeScript · PDF.js · Canvas/SVG · SQLite · Vite.
 
-### Contributing
-The project is currently in the planning stage. Suggestions and discussion can be opened through GitHub Issues.
+The stack and dependency licenses are subject to review before implementation and release.
+
+### Project status
+
+**Planning stage — no public application build is available yet.** Features listed above describe the intended direction.
+
+- [Roadmap and issues](https://github.com/German-GPD/pdf-workspace/issues)
+- [Releases](https://github.com/German-GPD/pdf-workspace/releases)
+- [License — PW-FUL](LICENSE)
+- [Contact and cooperation](https://t.me/german_me)
 
 ---
 
 ## Español
 
-**PDF Workspace** es una aplicación gratuita para Windows que permite leer, organizar y anotar documentos PDF. Está pensada para docentes, estudiantes y cualquier persona que necesite un espacio de trabajo cómodo para PDF.
+**PDF Workspace** es una futura aplicación gratuita para Windows destinada a leer, organizar y anotar documentos PDF. Está pensada principalmente para docentes y estudiantes.
 
-### Objetivos principales
-- Dar al documento el máximo espacio posible.
-- **Monic Control Bar** adaptable y personalizable: permite ordenar, ocultar, añadir y agrupar acciones.
-- Temas claro y oscuro con el color de acento del sistema Windows.
-- Biblioteca de documentos, archivos recientes, favoritos, marcadores y notas.
-- Dibujo, resaltado, notas de texto y otras anotaciones superpuestas.
-- Guardado automático del estado de trabajo y exportación de copias anotadas.
-- Sin cuenta obligatoria ni conexión a la nube.
-- Comprobación e instalación de actualizaciones desde la aplicación.
+### Funciones previstas
+
+- Visor PDF con búsqueda de texto, zoom, rotación y vista de dos páginas.
+- Biblioteca local, carpetas, colecciones, archivos recientes y favoritos.
+- Anotaciones: lápiz, resaltador, borrador, figuras, flechas y notas de texto.
+- Marcadores y notas vinculados a documentos y páginas.
+- Recuperación del estado de lectura: página, zoom y posición.
+- Exportación de documentos anotados a una copia PDF independiente.
+- Temas claro y oscuro con el color de acento de Windows.
+- Modos Normal, Compacto y Enfoque.
+
+### Monic Control Bar
+
+Barra adaptable y personalizable: permite reordenar, ocultar y agrupar acciones, elegir iconos o etiquetas y restaurar la configuración inicial.
 
 ### Tecnologías previstas
-Tauri 2 · Rust · WebView2 · TypeScript · PDF.js · SQLite.
 
-Las dependencias y sus licencias se revisarán antes de implementar y publicar versiones.
+Tauri 2 · Rust · WebView2 · TypeScript · PDF.js · Canvas/SVG · SQLite · Vite.
 
-### Estructura del proyecto
-- **[app/](app/)** — aplicación de escritorio para Windows.
-- **[website/](website/)** — sitio independiente para GitHub Pages.
-- **[docs/](docs/)** — arquitectura, decisiones y hoja de ruta.
+La arquitectura y las licencias de las dependencias se revisarán antes de la implementación.
 
-### Sitio web y descargas
-Sitio web: *se publicará después de preparar la primera versión.*  
-Descargas: *estarán disponibles con el primer lanzamiento.*
+### Estado del proyecto
 
-### Colaboración
-El proyecto está actualmente en fase de planificación. Las propuestas y debates pueden abrirse mediante GitHub Issues.
+**Fase de planificación: todavía no existe una versión pública de la aplicación.** Las funciones descritas representan los objetivos del proyecto.
+
+- [GitHub Issues](https://github.com/German-GPD/pdf-workspace)
+- [Descargas y versiones](https://github.com/German-GPD/pdf-workspace/releases)
+- [Licencia — PW-FUL](LICENSE)
+- [Contacto y colaboraciones](https://t.me/german_me)
 
 ---
 
-## Project principles
-
-1. **Document first** — the PDF is the main content, not the surrounding interface.
-2. **Progressive complexity** — simple by default, powerful when customized.
-3. **Local-first** — user documents remain under the user's control.
-4. **Accessible and predictable** — clear labels, keyboard support, and consistent behavior.
-5. **Transparent releases** — documented changes, verified downloads, and dependency licenses.
-
-## License
-
-The project license is still to be selected. No license grant should be assumed until the repository contains the approved license text.
+<p align="center">
+  <sub>Designed with focus by <a href="https://github.com/German-GPD">German-GPD</a> · PDF Workspace</sub>
+</p>
