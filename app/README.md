@@ -36,10 +36,9 @@ Output: app/src-tauri/target/release/bundle/nsis/.
 
 Tauri verifies each update with the Minisign public key embedded in src-tauri/tauri.conf.json. The matching private key must never be committed.
 
-Add these GitHub Actions secrets under Settings → Secrets and variables → Actions:
+Add this GitHub Actions secret under Settings → Secrets and variables → Actions:
 
-- TAURI_SIGNING_PRIVATE_KEY — the complete private key string.
-- TAURI_SIGNING_PRIVATE_KEY_PASSWORD — key password (empty for this project key).
+- TAURI_SIGNING_PRIVATE_KEY — paste the complete contents of the private key file linked in the project setup message. This key uses an empty password, so no password secret is required.
 
 The private key file is provided separately. Keep it in a password manager and never upload it to the repository. Do not rotate this key after the first public release: installed copies trust this exact public key.
 
