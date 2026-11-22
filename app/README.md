@@ -4,6 +4,10 @@
 
 PDF Workspace is a local-first Windows PDF workspace built with Tauri 2, Rust, TypeScript, Vite and PDF.js.
 
+[![Download for Windows](https://img.shields.io/badge/Download-Windows%20Installer-254d35?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/German-GPD/pdf-workspace/releases/latest/download/PDF-Workspace-setup.exe)
+
+[Download the latest `.exe` installer](https://github.com/German-GPD/pdf-workspace/releases/latest/download/PDF-Workspace-setup.exe) · [All releases](https://github.com/German-GPD/pdf-workspace/releases)
+
 ## Working now
 
 - Open PDF files from Windows and render pages locally.
@@ -44,10 +48,10 @@ Tauri verifies updates using the Minisign public key embedded in `src-tauri/taur
 
 Add this repository secret under **Settings → Secrets and variables → Actions**:
 
-- `TAURI_SIGNING_PRIVATE_KEY` — the complete contents of the private key file provided separately for this project.
-- `TAURI_SIGNING_PRIVATE_KEY_PASSWORD` — only if the key was created with a password; the supplied project key uses an empty password.
+- `TAURI_SIGNING_PRIVATE_KEY` — the complete contents of the private key that matches `plugins.updater.pubkey` in `src-tauri/tauri.conf.json`.
+- `TAURI_SIGNING_PRIVATE_KEY_PASSWORD` — only if that key was created with a password; otherwise leave it empty.
 
-Keep the private key private. Do not rotate it after the first public release: installed copies trust the current public key.
+Keep the private key out of Git. Do not replace the public key after publishing the first release: installed copies trust the embedded key. If the matching private key is unavailable before the first release, generate a new key pair with `npm run tauri signer generate -- -w $HOME/.tauri/pdf-workspace.key`, replace the public key in `tauri.conf.json`, and add the generated private key as the repository secret before publishing.
 
 Keep these versions synchronized before a release:
 - `app/package.json`
