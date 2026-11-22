@@ -1,0 +1,31 @@
+# Rust
+/target/
+/app/src-tauri/target/
+**/*.rs.bk
+
+# Node / frontend tooling
+node_modules/
+dist/
+.vite/
+.turbo/
+
+# Tauri build output
+/app/src-tauri/target/
+/app/src-tauri/gen/
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Logs and temporary files
+*.log
+*.tmp
