@@ -1,6 +1,6 @@
 [package]
 name = "pdf-workspace"
-version = "0.1.0"
+version = "0.2.0"
 description = "A local-first PDF workspace for Windows"
 authors = ["German-GPD"]
 edition = "2021"
