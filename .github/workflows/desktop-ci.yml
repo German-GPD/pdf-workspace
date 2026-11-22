@@ -1,0 +1,32 @@
+name: Desktop app checks
+on:
+  push:
+    branches: [main]
+    paths:
+      - "app/**"
+      - ".github/workflows/desktop-ci.yml"
+  pull_request:
+    paths:
+      - "app/**"
+      - ".github/workflows/desktop-ci.yml"
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
+      - name: Install frontend dependencies
+        working-directory: app
+        run: npm install
+      - name: TypeScript and frontend build
+        working-directory: app
+        run: npm run build
+      - name: Rust and Tauri configuration check
+        working-directory: app/src-tauri
+        run: cargo check
