@@ -29,7 +29,7 @@
 </p>
 
 > [!IMPORTANT]
-> **PDF Workspace — ранняя рабочая версия (MVP) в активной разработке.** Уже реализуется настольное приложение для Windows: открытие и просмотр PDF, история, локальная библиотека и обновление из самой программы. Аннотации, экспорт и расширенная организация документов ещё в работе.
+> **PDF Workspace 0.2.0 — ранний функциональный MVP.** Уже реализованы просмотр PDF, поиск по документу, масштабирование, ручка, маркер, локальное сохранение разметки и экспорт аннотированной копии. История, локальная библиотека и механизм подписанных обновлений также включены. Первый публичный установщик будет опубликован в GitHub Releases после настройки секрета подписи.
 
 ---
 
@@ -41,12 +41,12 @@
 
 | Раздел | Возможности |
 |---|---|
-| **PDF Viewer** | Просмотр страниц, поиск по тексту, масштабирование, поворот, режим двух страниц |
+| **PDF Viewer** | Просмотр страниц, поиск по всему тексту документа, навигация и масштабирование |
 | **Library** | Библиотека PDF, папки, коллекции, поиск, сортировка и избранное |
 | **Recent files** | История открытых документов и продолжение чтения |
-| **Annotations** | Ручка, маркер, выделение, ластик, фигуры, стрелки и текстовые заметки |
+| **Annotations** | Ручка и маркер; разметка сохраняется локально для каждого документа |
 | **Bookmarks & Notes** | Закладки с названиями и заметки к документам или страницам |
-| **Export** | Экспорт аннотированной версии в отдельную PDF-копию |
+| **Export** | Экспорт аннотированной версии в отдельную PDF-копию без изменения оригинала |
 | **Workspace** | Восстановление последней страницы, масштаба и позиции чтения |
 | **Appearance** | Светлая и тёмная темы, системный акцент Windows |
 | **Updates** | Проверка обновлений и установка новых версий |
@@ -100,14 +100,16 @@
 - [x] Подготовка лицензии PW-FUL.
 - [x] Первичная структура сайта GitHub Pages.
 - [x] Базовая архитектура Tauri 2 + Rust + TypeScript + PDF.js.
-- [x] Окно приложения, открытие PDF, просмотр страниц и масштабирование.
+- [x] Окно приложения, открытие PDF, просмотр страниц, навигация и масштабирование.
+- [x] Поиск текста по всему документу.
+- [x] Ручка и маркер с локальным сохранением аннотаций.
+- [x] Экспорт размеченной PDF-копии без перезаписи оригинала.
 - [x] Недавние документы, локальная библиотека и светлая/тёмная тема.
-- [x] Основа подписанного механизма обновления и Windows NSIS-сборки.
-- [ ] Полная реализация UI и Monic Control Bar.
-- [ ] Библиотека, история и навигация.
-- [ ] Аннотации, заметки и автосохранение.
-- [ ] Экспорт PDF.
-- [ ] Тестирование, установщик и первый релиз.
+- [x] Подготовлен подписанный механизм обновления и Windows NSIS-сборка.
+- [ ] Закладки, заметки, папки и расширенное управление библиотекой.
+- [ ] Поворот, режим двух страниц и дополнительные инструменты разметки.
+- [ ] Настраиваемая Monic Control Bar.
+- [ ] Первый публичный релиз и полное тестирование на Windows.
 
 ### Сайт и загрузки
 
@@ -157,7 +159,7 @@ The stack is preliminary. Dependency compatibility, licensing, and the PDF annot
 
 ### Project status
 
-**Early working MVP in active development.** The Windows app is being implemented; the first signed installer will be published through GitHub Releases. Some planned features are not implemented yet.
+**Early functional MVP · version 0.2.0.** PDF viewing, document-wide text search, pen/highlighter annotations, local annotation persistence and annotated PDF export are implemented. The first signed installer will be published through GitHub Releases after the updater signing secret is configured.
 
 - [Website source](web/)
 - [Download Windows installer (.exe)](https://github.com/German-GPD/pdf-workspace/releases/latest/download/PDF-Workspace-setup.exe) — available after the first signed release.
@@ -195,7 +197,7 @@ La arquitectura es preliminar. La compatibilidad, las licencias de dependencias 
 
 ### Estado del proyecto
 
-**MVP funcional inicial en desarrollo activo.** Se está implementando la aplicación para Windows; el primer instalador firmado se publicará en GitHub Releases. Algunas funciones previstas aún no están implementadas.
+**MVP funcional inicial · versión 0.2.0.** Ya funcionan el visor PDF, la búsqueda de texto en el documento, las anotaciones con lápiz y resaltador, el guardado local de anotaciones y la exportación de una copia PDF. El primer instalador firmado se publicará en GitHub Releases después de configurar la clave de firma.
 
 - [Código del sitio](web/)
 - [Descargar instalador Windows (.exe)](https://github.com/German-GPD/pdf-workspace/releases/latest/download/PDF-Workspace-setup.exe) — disponible tras la primera versión firmada.
