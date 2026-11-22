@@ -378,7 +378,7 @@ async function exportAnnotatedPdf() {
     button.textContent = "Экспорт PDF";
   }
 }
-async function checkForUpdates() {
+async function checkForUpdates(silent = false) {
   if (!isTauri()) { showToast("Проверка обновлений доступна в установленной версии."); return; }
   updateStatus.textContent = "Проверяем…";
   try {
@@ -395,7 +395,7 @@ async function checkForUpdates() {
     updateStatus.textContent = "Доступна версия " + update.version;
   } catch (error) {
     updateStatus.textContent = "Не удалось проверить обновления";
-    showToast(error instanceof Error ? error.message : "Ошибка проверки обновлений.");
+    if (!silent) showToast(error instanceof Error ? error.message : "Ошибка проверки обновлений.");
   }
 }
 async function installUpdate() {
@@ -471,4 +471,4 @@ $("app-version").textContent = "v0.2.0";
 renderLists();
 applyTheme();
 setTool("select");
-if (isTauri()) window.setTimeout(() => void checkForUpdates(), 2500);
+if (isTauri()) window.setTimeout(() => void checkForUpdates(true), 2500);
