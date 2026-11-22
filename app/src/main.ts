@@ -362,7 +362,9 @@ async function exportAnnotatedPdf() {
       if (!path) return;
       await writeFile(path, bytes);
     } else {
-      const blob = new Blob([bytes], { type: "application/pdf" });
+      const downloadBuffer = new ArrayBuffer(bytes.byteLength);
+      new Uint8Array(downloadBuffer).set(bytes);
+      const blob = new Blob([downloadBuffer], { type: "application/pdf" });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
