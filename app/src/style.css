@@ -29,3 +29,5 @@ button:disabled{opacity:.42;cursor:not-allowed}
  .toolbar{height:auto;min-height:65px;flex-wrap:wrap;padding:10px}
  .empty-state{inset:150px 0 0}
 }
+
+[hidden]{display:none!important}
