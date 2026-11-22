@@ -110,7 +110,8 @@
 ### Сайт и загрузки
 
 - **Сайт:** исходники находятся в [web/](web/). Для публикации включите GitHub Pages через **Settings → Pages → GitHub Actions**.
-- **Скачать Windows-установщик (.exe):** [PDF-Workspace-setup.exe](https://github.com/German-GPD/pdf-workspace/releases/latest/download/PDF-Workspace-setup.exe) — ссылка активируется после первого подписанного релиза.\n- **Все версии:** [GitHub Releases](https://github.com/German-GPD/pdf-workspace/releases).
+- **Скачать Windows-установщик (.exe):** [PDF-Workspace-setup.exe](https://github.com/German-GPD/pdf-workspace/releases/latest/download/PDF-Workspace-setup.exe) — ссылка активируется после первого подписанного релиза.
+- **Все версии:** [GitHub Releases](https://github.com/German-GPD/pdf-workspace/releases).
 - **Обратная связь:** [GitHub Issues](https://github.com/German-GPD/pdf-workspace/issues).
 - **Сотрудничество:** [Telegram · @german_me](https://t.me/german_me).
 
@@ -157,7 +158,8 @@ The stack is preliminary. Dependency compatibility, licensing, and the PDF annot
 **Early working MVP in active development.** The Windows app is being implemented; the first signed installer will be published through GitHub Releases. Some planned features are not implemented yet.
 
 - [Website source](web/)
-- [Download Windows installer (.exe)](https://github.com/German-GPD/pdf-workspace/releases/latest/download/PDF-Workspace-setup.exe) — available after the first signed release.\n- [GitHub Releases](https://github.com/German-GPD/pdf-workspace/releases)
+- [Download Windows installer (.exe)](https://github.com/German-GPD/pdf-workspace/releases/latest/download/PDF-Workspace-setup.exe) — available after the first signed release.
+- [GitHub Releases](https://github.com/German-GPD/pdf-workspace/releases)
 - [Issues](https://github.com/German-GPD/pdf-workspace/issues)
 - [PW-FUL License](LICENSE)
 - [Contact and cooperation](https://t.me/german_me)
@@ -194,7 +196,8 @@ La arquitectura es preliminar. La compatibilidad, las licencias de dependencias 
 **MVP funcional inicial en desarrollo activo.** Se está implementando la aplicación para Windows; el primer instalador firmado se publicará en GitHub Releases. Algunas funciones previstas aún no están implementadas.
 
 - [Código del sitio](web/)
-- [Descargar instalador Windows (.exe)](https://github.com/German-GPD/pdf-workspace/releases/latest/download/PDF-Workspace-setup.exe) — disponible tras la primera versión firmada.\n- [Versiones](https://github.com/German-GPD/pdf-workspace/releases)
+- [Descargar instalador Windows (.exe)](https://github.com/German-GPD/pdf-workspace/releases/latest/download/PDF-Workspace-setup.exe) — disponible tras la primera versión firmada.
+- [Versiones](https://github.com/German-GPD/pdf-workspace/releases)
 - [GitHub Issues](https://github.com/German-GPD/pdf-workspace/issues)
 - [Licencia PW-FUL](LICENSE)
 - [Contacto y colaboraciones](https://t.me/german_me)
