@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/Windows-desktop-254d35?style=flat-square" alt="Windows">
   <img src="https://img.shields.io/badge/Free_to_use-yes-527858?style=flat-square" alt="Free to use">
   <img src="https://img.shields.io/badge/License-PW--FUL-254d35?style=flat-square" alt="PW-FUL">
-  <img src="https://img.shields.io/badge/Status-MVP%20development-527858?style=flat-square" alt="Planning">
+  <img src="https://img.shields.io/badge/Status-Functional%20MVP-527858?style=flat-square" alt="Planning">
   <img src="https://img.shields.io/badge/Languages-RU%20%7C%20EN%20%7C%20ES-527858?style=flat-square" alt="Languages">
 </p>
 
